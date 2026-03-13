@@ -2,7 +2,8 @@
 const config = require("./config");
 
 function fetchData() {
-  console.log(`Fetching from ${config.API_URL} with timeout ${config.TIMEOUT}`);
+  const apiUrl = process.env.API_URL || "https://api.example.com";
+  console.log(`Fetching from ${apiUrl} with timeout ${config.TIMEOUT}`);
   return { status: "ok" };
 }
 
